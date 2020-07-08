@@ -1,0 +1,319 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Placeorder - Fresh Buys
+  </title>
+  <!--  Fonts and icons     -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- CSS Files -->
+  <link href="./css/style.css" rel="stylesheet" />
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="mobile-bottom-nav">
+      <div class="mobile-bottom-nav__item">
+        <div class="mobile-bottom-nav__item-content">
+          <a href="index.html"><i class="material-icons">home</i>
+          Home </a>
+        </div>    
+      </div>
+      <div class="mobile-bottom-nav__item">   
+        <div class="mobile-bottom-nav__item-content">
+          <i class="material-icons">add_shopping_cart</i>
+          Place Order </a>
+        </div>
+      </div>
+      <div class="mobile-bottom-nav__item">
+        <div class="mobile-bottom-nav__item-content">
+          <a href="records.html" class="router-link-exact-active"><i class="material-icons">list_alt</i>
+          Records </a>
+        </div>    
+      </div>
+      
+      <div class="mobile-bottom-nav__item">
+        <div class="mobile-bottom-nav__item-content">
+          <i class="material-icons">pin_drop</i>
+          Track Order
+        </div>    
+      </div>
+    </nav>
+
+    <nav class="main-nav">
+      <a href="index.html"> <img src="./img/freshbuys-logo.png"> </a>
+      <ul>
+        <li><a href="index.html">Home </a></li>
+        <li><a href="placeorder.html" class="router-link-exact-active">Place Order </a></li>
+        <li><a href="records.html" >Records </a></li>
+        <li><a href="#" >Track Order </a></li>
+      </ul>
+      <div class="user-profile">
+        <a href="#"> <img src="./img/jerry.jpg"> </a>
+      </div>
+    </nav>
+
+    
+  </header>
+
+  <main>
+  <div class="container">
+      <div class="col-md-16">
+        <div class=" d-inline-block title-header">
+          <h3 class="mb-3"> Placeorder </h3>
+        </div>
+
+		  <br>
+		<div>
+		
+		  <div class="row">
+            <div class="col-md-7">
+              <div class="card">
+                <div class="card-header"> List of Order 
+			  	  <div class="d-inline-block sort-table">
+					        <span> Viewing 1 - 3 of 1 
+								  <button class="btn btn-next"> <i class="material-icons">keyboard_arrow_left </i> </button>
+								  <button class="btn btn-prev"><i class="material-icons">keyboard_arrow_right </i> </button>
+					        </span>
+                   </div>
+			    </div>
+					<div class="card-body">
+						<div class="table-responsive">
+					<style>
+							table {
+							  font-family: arial, sans-serif;
+							  border-collapse: collapse;
+							  border-color: black;
+							  width: 100%;
+							}
+
+							 th {
+							  border: 1px solid #dddddd;
+							  text-align: center;
+							  padding: 8px;
+							  font-size: 16px;
+							}
+							 td {
+							  border: 1px solid #dddddd;
+							  text-align: center;
+							  padding: 8px;
+							}
+							tr:nth-child(even) {
+							  background-color: #C7EA46;
+							}
+							.btn {
+							  background-color: none;
+							  border: white;
+							  color: red;
+							  padding: 10px 12px;
+							  font-size: 14px;
+							  cursor: pointer;
+							}
+							.btn:hover {
+							  background-color: red;
+							}
+							#myInput:focus {outline: 3px solid #ddd;}
+
+							.dropdown {
+							  position: relative;
+							  display: inline-block;
+							}
+
+							.dropdown-content {
+							  display: none;
+							  position: absolute;
+							  background-color: #f6f6f6;
+							  min-width: 230px;
+							  overflow: auto;
+							  border: 1px solid #ddd;
+							  z-index: 1;
+							}
+
+							.dropdown-content a {
+							  color: black;
+							  padding: 12px 16px;
+							  text-decoration: none;
+							  display: block;
+							}
+
+							.dropdown a:hover {background-color: #ddd;}
+
+							.show {display: block;}
+							.shows {display: block;}
+							</style>
+							<table>
+					          <div class="dropdown">
+					           <button onclick="myFunction()" class="btn btn-primary dropdown-toggle" style="margin:2px;">Select Product<span class="caret"></span></button>
+					            <div id="myDropdown" class="dropdown-content">
+						         <input type="text" placeholder="Search" id="myInput" onkeyup="filterFunction()">
+									<a>Product 1</a>
+									<a>Product 2</a>
+									<a>Product 3</a>
+					           </div>
+					          </div>
+									<script>
+									function myFunction() {
+									  document.getElementById("myDropdown").classList.toggle("show");
+									}
+
+									function filterFunction() {
+									  var input, filter, ul, li, a, i;
+									  input = document.getElementById("myInput");
+									  filter = input.value.toUpperCase();
+									  div = document.getElementById("myDropdown");
+									  a = div.getElementsByTagName("a");
+									  for (i = 0; i < a.length; i++) {
+										txtValue = a[i].textContent || a[i].innerText;
+										if (txtValue.toUpperCase().indexOf(filter) > -1) {
+										  a[i].style.display = "";
+										} else {
+										  a[i].style.display = "none";
+										}
+									  }
+									}
+					</script>
+					<div class="dropdown">
+					           <button onclick="Quantity()" class="btn btn-primary dropdown-toggle"  style="margin:8px;">Quantity<span class="caret"></span></button>
+					            <div id="Dropdown" class="dropdown-content">
+						         <input type="text" placeholder="Input quantity" id="Inputs" onkeyup="filterQuantity()">
+									<a>1</a>
+									<a>2</a>
+									<a>3</a>
+					           </div>
+					          </div>
+					<script>
+							function Quantity() {
+							  document.getElementById("Dropdown").classList.toggle("shows");
+							}
+
+							function filterQuantity() {
+							  var input, filter, ul, li, a, i;
+							  input = document.getElementById("Inputs");
+							  filter = input.value.toUpperCase();
+							  div = document.getElementById("Dropdown");
+							  a = div.getElementsByTagName("a");
+							  for (i = 0; i < a.length; i++) {
+								txtValue = a[i].textContent || a[i].innerText;
+								if (txtValue.toUpperCase().indexOf(filter) > -1) {
+								  a[i].style.display = "";
+								} else {
+								  a[i].style.display = "none";
+								}
+							  }
+							}
+					</script>
+					<button class="btn btn-primary" type="button" style="padding: 8px 40px;" font-size: 16px;>ADD <span class="caret"></span></button>
+		</div>
+		<br>
+		<br>
+						   <thead>
+							  <tr>
+								<th>Product</th>
+								<th>Quantity</th>
+								<th>Price</th>
+								<th>Total</th>
+								<th>Action</th>
+							  </tr>
+							 </thead>
+							  <tr>
+								<td>Product 1</td>
+								<td>Quantity 1</td>
+								<td><span>₱</span>90</td>
+								<td><span>₱</span>90</td>
+								<th><button class="btn"><i class="fa fa-trash"></i> Delete</button></th>
+							  </tr>
+							  <tr>
+								<td>Product 2</td>
+								<td>Quantity 2</td>
+								<td><span>₱</span>91</td>
+								<td><span>₱</span>91</td>
+								<th><button class="btn"><i class="fa fa-trash"></i> Delete</button</th>
+							  </tr>
+							  <tr>
+								<td>Product 3</td>
+								<td>Quantity 3</td>
+								<td><span>₱</span>92</td>
+								<td><span>₱</span>92</td>
+								<th><button class="btn"><i class="fa fa-trash"></i> Delete</button</th>
+							  </tr>
+							</table>
+							<br>
+							<label for="ship"><b>Shipping:</b> <span>₱</span>200 </label><br>
+							<label for="Total"><b>Total: </b> <span>₱</span>230 </label>
+		                </div>
+		            </div>
+		      </div>
+		    </div>
+			<div class="col-md-5">
+			<div class="card">
+			    <form action="/action_page.php">
+				      <input type="radio" id="male" name="gender" value="male">
+						  <label for="male">Male</label>
+						  <input type="radio" id="female" name="gender" value="female" checked="checked">
+						  <label for="female">Female</label>
+						  <input type="radio" id="other" name="gender" value="other">
+						  <label for="other">Other</label><br>
+					  <label for="fname" >First name :</label>
+					  <input type="text" id="fname" name="fname" ><br>
+					  <label for="lname">Last name :</label>
+					  <input type="text" id="lname" name="lname" ><br>
+					  <label for="lname">Contact no. :</label>
+					  <input type="text" id="contactno" name="contactno" placeholder="+639"><br>
+					  <label for="houseno.">House no. :</label>
+					  <input type="text" id="houseno" name="houseno" ><br>
+					  <label for="streetname" placeholder="541">Street name :</label>
+					  <input type="text" id="streetname" name="streetname" ><br>
+					  <label for="barangay" >Barangay :</label>
+					  <input type="text" id="barangay" name="barangay"><br>
+					  <label for="city">City/Municipality :</label>
+					   <select name="city" id="city">
+						  <option value="baguio">Baguio</option>
+						  <option value="Makati">Makati</option>
+					   </select><br>
+					   <label for="province">Province :</label>
+					  <input type="text" id="province" name="province" placeholder="Benguet"><br>
+					  <label for="zipcode">Zip/Postal Code :</label>
+					  <input type="text" id="zipcode" name="zipcode" placeholder="2604">	<br>  
+					  <label for="deliverydate">Delivery Date :</label>
+                      <input type="date" id="deliverydate" name="deliverydate"><br>  
+					  <label for="paymentmethod">Payment method :</label>
+					   <select name="paymentmethod" id="paymentmethod">
+						  <option value="cash">Cash</option>
+						  <option value="creditcard">Credit card</option>
+						  <option value="cod">Casg on delivery</option>
+					   </select><br>
+					   <label for="shippingmethod">Shipping method :</label>
+					   <select name="shippingmethod" id="shippingmethod">
+						  <option value="railfreight">Rail Freight</option>
+						  <option value="busship">Bus ship</option>
+						  <option value="cargo">Cargo</option>
+					   </select><br>
+					  <button class="btn btn-primary" type="button" style="float:left" font-size: 16px;  >Proceed<span class="caret"></span></button>
+               </form>
+			  </div>
+			  </div>
+			  </div>
+              </div>
+		      </div>
+		
+ 
+				
+		
+  </main>
+  
+
+</body>
+  
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/script.js"></script>
+</html>
